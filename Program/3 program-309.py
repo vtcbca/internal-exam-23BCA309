@@ -1,46 +1,17 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# # creating a python.txt file and take input from user 
-
-# In[31]:
-
+# creating a python.txt file and take input from user 
 
 import csv
 
+with open("D:\\23BCA309\\sqlite-tools-win-x64-3460000\\csv\\python.txt","w")as txt:
+    cur=csv.writer(txt)
 
-# In[32]:
-
-
-with open("D:\\23BCA309\\sqlite-tools-win-x64-3460000\\csv\\python.txt","r")as txt:
-    r=csv.writer(txt)
-
-
-# In[27]:
-
-
-s
-
-
-# In[33]:
-
-
-txt.write("my name is vihsal")
-
-
-# In[23]:
-
-
-op=''
+op='n'
+l=[]
 while op!='y':
-    l=input()
-    txt.write(l)
-    op=input("want to end(y or n):")
+    sentence=input()
+    l.append(sentence)
+    op=input("want to end(y/n):")
+    
     
 
-
-# In[20]:
-
-
-print(l)
-
+cur.writerow(l)
